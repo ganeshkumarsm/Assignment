@@ -1,6 +1,8 @@
 Author: Ganesh Kumar
 Version: 1.0
-
+Note:
+Below project was supposed to run using Docker stack deploy in Docker swarm mode. Due to some issues with "docker stack deploy" command 
+(it creates only services, network but not the containers), I didnt deploy the stack. 
 Prerequisites:
  A linux machine with Docker installed 
 This assignment was done on Docker version 18.09.7, build 2d0083d
