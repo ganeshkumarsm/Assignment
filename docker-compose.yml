@@ -1,0 +1,28 @@
+version: '3.2'
+
+services:
+  proxy:
+    image: 127.0.0.1:5000/proxy     
+    build: nginx/
+    ports:
+    - 8081:443
+    networks:
+    - net
+    depends_on:
+    - app
+    hostname: proxy
+    container_name: proxy
+
+  app:
+    image: 127.0.0.1:5000/app
+    build: Tomcat/
+    ports:
+    - 8080
+    networks:
+    - net
+    hostname: app
+    
+networks:
+  net:
+    driver: overlay
+    attachable: true
